@@ -2,15 +2,22 @@
 
 Download videos from YouTube, Facebook, and other supported sites. Version **0.2.3** for **64-bit Windows 10/11**.
 
-This repository contains only the Windows executable and usage instructions. Source code is not included.
+This repository contains only the Windows setup installer and usage instructions. Source code is not included.
 
-## Download and open
+## Download and install
 
-1. [Download VideoDownloader.exe](https://github.com/satalways/video-downloader/raw/refs/heads/main/VideoDownloader.exe).
-2. Save it somewhere convenient and double-click it. The app opens maximized.
-3. On first use, click **Install tools** inside the app and wait for installation to finish. Internet access is required to download yt-dlp, FFmpeg, FFprobe, and Deno. Tools are installed under your Windows user account without administrator access.
+1. [Download VideoDownloaderSetup.exe](https://github.com/satalways/video-downloader/raw/refs/heads/main/VideoDownloaderSetup.exe).
+2. Double-click the setup file and follow the installation wizard. Installation is for your current Windows user and does not require administrator access. The default location is `%LOCALAPPDATA%\Programs\Video Downloader`.
+3. Setup creates a **Video Downloader** shortcut in the Start menu. You can also select the optional desktop shortcut. Open the app from either shortcut; it opens maximized.
+4. On first use, click **Install tools** inside the app and wait for installation to finish. Internet access is required to download yt-dlp, FFmpeg, FFprobe, and Deno. Tools are installed under your Windows user account without administrator access.
 
-The executable includes the .NET runtime. No separate .NET installation, companion DLLs, or source files are needed. The first launch may take a few seconds while bundled runtime files are extracted. Download tools are installed separately by the app.
+Setup includes the application and .NET runtime. No separate .NET installation or source files are needed. The first launch may take a few seconds while bundled runtime files are extracted. Download tools are installed separately by the app.
+
+## Update or uninstall
+
+Before running setup again or uninstalling, right-click the app's tray icon and choose **Exit**. Clicking the window's **X** keeps the app running in the background. Setup and uninstall will ask you to close a running copy of this version.
+
+Run a newer setup file to update the installed application. To remove it, open **Windows Settings → Apps**, find **Video Downloader**, and choose **Uninstall**. Uninstall removes the application and shortcuts while keeping your downloaded videos, settings, history, and installed download tools.
 
 ## Download videos
 
@@ -43,10 +50,10 @@ Use **Pause queue** to prevent the next video from starting; the current downloa
 
 ## Verify your download
 
-SHA-256 for `VideoDownloader.exe`:
+SHA-256 for `VideoDownloaderSetup.exe`:
 
 ```text
-65C01388F81A908885FA9B65853794BC5CDDB1C999C76296F943E3E8CB2F354A
+CDDAF4E04365E4BBB3AA090B72272D862F59B81F0B0080680D1AF88B318C2D7D
 ```
 
-To check it in PowerShell, run `Get-FileHash .\VideoDownloader.exe -Algorithm SHA256` and compare the result above.
+To check it in PowerShell, run `Get-FileHash .\VideoDownloaderSetup.exe -Algorithm SHA256` and compare the result above.
