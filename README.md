@@ -1,6 +1,6 @@
 # Video Downloader for Windows
 
-Download videos from YouTube, Facebook, and other supported sites. Version **0.2.3** for **64-bit Windows 10/11**.
+Download videos from YouTube, Facebook, and other supported sites. Version **0.2.4** for **64-bit Windows 10/11**.
 
 This repository contains only the Windows setup installer and usage instructions. Source code is not included.
 
@@ -53,7 +53,7 @@ Use **Pause queue** to prevent the next video from starting; the current downloa
 SHA-256 for `VideoDownloaderSetup.exe`:
 
 ```text
-CDDAF4E04365E4BBB3AA090B72272D862F59B81F0B0080680D1AF88B318C2D7D
+D13CF587DBBF8A6EE1F75B9517EF3742D69330ABB213EBD1810D1738B0456234
 ```
 
 To check it in PowerShell, run `Get-FileHash .\VideoDownloaderSetup.exe -Algorithm SHA256` and compare the result above.
