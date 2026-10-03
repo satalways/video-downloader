@@ -1,23 +1,25 @@
 # Video Downloader for Windows
 
-Download videos from YouTube, Facebook, and other supported sites. Version **0.2.6** for **64-bit Windows 10/11**.
+Download videos from YouTube, Facebook, and other supported sites. Version **0.2.7** for **64-bit Windows 10/11**.
 
 This repository contains only the Windows setup installer and usage instructions. Source code is not included.
 
 ## Download and install
 
-1. [Download VideoDownloaderSetup.exe](https://github.com/satalways/video-downloader/raw/refs/heads/main/VideoDownloaderSetup.exe).
+1. [Download VideoDownloaderSetup.exe](https://github.com/satalways/video-downloader/releases/latest/download/VideoDownloaderSetup.exe).
 2. Double-click the setup file and follow the installation wizard. Installation is for your current Windows user and does not require administrator access. The default location is `%LOCALAPPDATA%\Programs\Video Downloader`.
 3. Setup creates a **Video Downloader** shortcut in the Start menu. You can also select the optional desktop shortcut. Open the app from either shortcut; it opens maximized.
 4. On first use, click **Install tools** inside the app and wait for installation to finish. Internet access is required to download yt-dlp, FFmpeg, FFprobe, and Deno. Tools are installed under your Windows user account without administrator access.
 
 Setup includes the application and .NET runtime. No separate .NET installation or source files are needed. The first launch may take a few seconds while bundled runtime files are extracted. Download tools are installed separately by the app.
 
+A [single-file portable app](https://github.com/satalways/video-downloader/releases/latest/download/VideoDownloader.exe) is also available. It supports automatic updates and keeps a backup of the previous executable.
+
 ## Update or uninstall
 
 Before running setup again or uninstalling, right-click the app's tray icon and choose **Exit**. Clicking the window's **X** keeps the app running in the background. Setup and uninstall will ask you to close a running copy of this version.
 
-Run a newer setup file to update the installed application. To remove it, open **Windows Settings → Apps**, find **Video Downloader**, and choose **Uninstall**. Uninstall removes the application and shortcuts while keeping your downloaded videos, settings, history, and installed download tools.
+**Automatically update app** is enabled by default. The app checks stable GitHub Releases at startup and every six hours. When a newer version is available, it verifies the download, waits until active downloads, analysis, and tool updates finish, then installs and restarts. Your settings, history, and paused queue are preserved. Disable the checkbox to stop automatic installation; **Check for app updates** still reports available versions. You can also run a newer setup file to update the installed application. To remove it, open **Windows Settings → Apps**, find **Video Downloader**, and choose **Uninstall**. Uninstall removes the application and shortcuts while keeping your downloaded videos, settings, history, and installed download tools.
 
 ## Download videos
 
@@ -53,7 +55,7 @@ Use **Pause queue** to prevent the next video from starting; the current downloa
 SHA-256 for `VideoDownloaderSetup.exe`:
 
 ```text
-A6C5C095C94BCB812E98148A72479D1E20AEA93FF7B2D5361EA6801F62F1539B
+3F1761AB5E84A4291F6F62D1E78315102366C02E37534AEADE4E338D1817F99D
 ```
 
 To check it in PowerShell, run `Get-FileHash .\VideoDownloaderSetup.exe -Algorithm SHA256` and compare the result above.
